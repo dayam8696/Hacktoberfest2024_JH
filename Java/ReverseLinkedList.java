@@ -50,7 +50,7 @@ public class ReverseLinkedList {
     }
     
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
+        ReverseLinkedList list = new ReverseLinkedList();
         
         list.append(1);
         list.append(2);
