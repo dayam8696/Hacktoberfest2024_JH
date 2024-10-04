@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="good">Good</string>
+    <string name="fair">Fair</string>
+    <string name="moderate">Moderate</string>
+    <string name="poor">Poor</string>
+    <string name="very_poor">Very Poor</string>
+    <string name="sunrise">sunrise</string>
+    <string name="max_temp">Max temp</string>
+    <string name="feels_like">Feels like</string>
+    <string name="min_temp">Min temp</string>
+    <string name="air_quality">Air Quality</string>
+    <string name="perfect">perfect</string>
+    <string name="five_days_forecast">Five Days Forecast</string>
+    <string name="clear_sky">Clear Sky</string>
+    <string name="location">Location</string>
+    <string name="updated_at">updated at</string>
+    <string name="_24_c">24°C</string>
+    <string name="pressure">Pressure</string>
+    <string name="sunset">Sunset</string>
+    <string name="humidity">Humidity</string>
+    <string name="wind_speed">Wind speed</string>
+</resources>
