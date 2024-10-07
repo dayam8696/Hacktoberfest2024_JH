@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +12,53 @@
             opacity: 0;
             animation: fadeIn 2s forwards;
         }
+
         @keyframes fadeIn {
             to {
                 opacity: 1;
             }
         }
+
+        /* Landing Page Background */
+        .landing {
+            background-image: url('a.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Button Hover Effects */
+        .cta-button {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #4f46e5;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #4f46e5;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
+
 <body class="bg-gray-100 text-gray-800">
 
     <!-- Navbar -->
-    <header class="w-full bg-indigo-600 shadow-lg">
+    <header class="w-full bg-indigo-600 shadow-lg fixed top-0 z-10">
         <div class="container mx-auto flex justify-between items-center py-4 px-6">
             <h1 class="text-3xl font-bold text-white">Hacktoberfest 2024 JH</h1>
             <nav>
@@ -35,19 +72,25 @@
         </div>
     </header>
 
-    <section class="flex flex-col items-center justify-center h-screen bg-indigo-500 text-white fade-in">
-        <h2 class="text-5xl font-bold mb-4">Welcome to Hacktoberfest 2024</h2>
-        <p class="text-xl mb-8">Join us in contributing to open source and making an impact!</p>
-        <a href="https://github.com/NessaRNG/Hacktoberfest2024_JH" target="_blank" class="bg-white text-indigo-600 px-6 py-3 rounded-md shadow-lg hover:bg-indigo-100 transition duration-300">Visit GitHub Repository</a>
-    </section>
-
-    <section id="about" class="py-20 bg-gray-100 text-center fade-in">
-        <div class="container mx-auto px-6">
-            <h3 class="text-4xl font-bold mb-6">About the Project</h3>
-            <p class="text-xl mb-8">Hacktoberfest 2024 JH is an open-source project that encourages contributions from developers of all skill levels. Whether you're a beginner or a pro, your contributions matter!</p>
+    <!-- Landing Section -->
+    <section class="landing fade-in">
+        <div class="text-center">
+            <h2 class="text-6xl font-bold mb-4">Contribute to Open Source</h2>
+            <p class="text-2xl mb-6">Make your mark with Hacktoberfest 2024!</p>
+            <a href="#about" class="cta-button">Learn More</a>
         </div>
     </section>
 
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100 text-center fade-in">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold mb-6">About the Project</h3>
+            <p class="text-xl mb-8">Hacktoberfest 2024 JH is an open-source project that encourages contributions from
+                developers of all skill levels. Whether you're a beginner or a pro, your contributions matter!</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
     <section id="features" class="py-20 bg-white text-center fade-in">
         <div class="container mx-auto px-6">
             <h3 class="text-4xl font-bold mb-6">Features</h3>
@@ -68,6 +111,7 @@
         </div>
     </section>
 
+    <!-- How to Contribute Section -->
     <section id="contribute" class="py-20 bg-gray-100 text-center fade-in">
         <div class="container mx-auto px-6">
             <h3 class="text-4xl font-bold mb-6">How to Contribute</h3>
@@ -82,25 +126,48 @@
                     <p>Submit your changes by creating a pull request.</p>
                 </div>
             </div>
-            <a href="https://github.com/dayam8696/Hacktoberfest2024_JH" target="_blank" class="bg-indigo-600 text-white px-6 py-3 rounded-md shadow-lg mt-8 inline-block hover:bg-indigo-500 transition duration-300">Contribute Now</a>
+            <a href="https://github.com/NessaRNG/Hacktoberfest2024_JH" target="_blank"
+                class="bg-indigo-600 text-white px-6 py-3 rounded-md shadow-lg mt-8 inline-block hover:bg-indigo-500 transition duration-300">Contribute
+                Now</a>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="py-20 bg-white text-center fade-in">
         <div class="container mx-auto px-6">
             <h3 class="text-4xl font-bold mb-6">Get in Touch</h3>
             <p class="text-xl mb-8">Have questions? Reach out to us!</p>
             <form class="max-w-md mx-auto">
-                <input type="text" class="w-full px-4 py-2 mb-4 rounded-md border border-gray-300" placeholder="Your Name" required>
-                <input type="email" class="w-full px-4 py-2 mb-4 rounded-md border border-gray-300" placeholder="Your Email" required>
-                <textarea class="w-full px-4 py-2 mb-4 rounded-md border border-gray-300" placeholder="Your Message" rows="4" required></textarea>
-                <button type="submit" class="bg-indigo-600 text-white px-6 py-3 rounded-md shadow-lg hover:bg-indigo-500 transition duration-300">Send Message</button>
+                <input type="text" class="w-full px-4 py-2 mb-4 rounded-md border border-gray-300"
+                    placeholder="Your Name" required>
+                <input type="email" class="w-full px-4 py-2 mb-4 rounded-md border border-gray-300"
+                    placeholder="Your Email" required>
+                <textarea class="w-full px-4 py-2 mb-4 rounded-md border border-gray-300" placeholder="Your Message"
+                    rows="4" required></textarea>
+                <button type="submit"
+                    class="bg-indigo-600 text-white px-6 py-3 rounded-md shadow-lg hover:bg-indigo-500 transition duration-300">Send
+                    Message</button>
             </form>
         </div>
     </section>
+
     <footer class="py-6 bg-indigo-600 text-white text-center">
         <p>&copy; 2024 Hacktoberfest2024 JH. All Rights Reserved.</p>
     </footer>
 
+    <!-- Smooth Scroll Script -->
+    <script>
+        // Smooth scroll to sections
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
 </body>
+
 </html>
