@@ -8,6 +8,7 @@
     <title>Hacktoberfest 2024 JH</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
         .fade-in {
             opacity: 0;
             animation: fadeIn 2s forwards;
@@ -19,18 +20,79 @@
             }
         }
 
-        /* Landing Page Background */
+      
         .landing {
-            background-image: url('a.png');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
+
+            font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    background-image: url('https://img.pikbest.com/ai/illus_our/20230420/c47be32a7f60d1ff378d6e0d05c0cc87.jpg!w700wp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.landing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+.text-center h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 1rem;
+}
+
+.text-center p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.cta-button {
+    font-size: 1.25rem;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #00BFFF; 
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 191, 255, 0.5);
+}
+
+.cta-button:hover {
+    background-color: #00FFFF; 
+}
+
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
         /* Button Hover Effects */
         .cta-button {
@@ -157,7 +219,7 @@
 
     <!-- Smooth Scroll Script -->
     <script>
-        // Smooth scroll to sections
+     
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
