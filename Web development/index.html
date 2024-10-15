@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floating Bubble Effect</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #1a1a2e;
+    }
+
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.2);
+      pointer-events: none;
+      animation: float 5s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-50px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  const bubbleCount = 50; // Number of bubbles
+  const bubbles = [];
+
+  function createBubble() {
+    const bubble = document.createElement('div');
+    const size = Math.random() * 40 + 20; // Random size between 20px and 60px
+    bubble.classList.add('bubble');
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
+    bubble.style.left = `${Math.random() * window.innerWidth}px`;
+    bubble.style.top = `${Math.random() * window.innerHeight}px`;
+    document.body.appendChild(bubble);
+    bubbles.push(bubble);
+  }
+
+  function moveBubbles(e) {
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+
+    bubbles.forEach(bubble => {
+      const dx = (bubble.offsetLeft + bubble.offsetWidth / 2) - mouseX;
+      const dy = (bubble.offsetTop + bubble.offsetHeight / 2) - mouseY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      const maxDistance = 200;
+
+      if (distance < maxDistance) {
+        const scale = 1 - distance / maxDistance;
+        bubble.style.transform = `scale(${1 + scale})`;
+      } else {
+        bubble.style.transform = 'scale(1)';
+      }
+    });
+  }
+
+  // Create multiple bubbles on page load
+  for (let i = 0; i < bubbleCount; i++) {
+    createBubble();
+  }
+
+  // Add event listener to move bubbles based on mouse position
+  document.addEventListener('mousemove', moveBubbles);
+</script>
+
+</body>
+</html>
