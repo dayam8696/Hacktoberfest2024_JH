@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Tracker</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="{% url 'st_homepage' %}">Home</a>
+        </div>
+        <div class="nav-right">
+            <a href="{% url 'st_allstocks' %}">My Stocks</a>
+            <a href="{% url 'st_stocknews' %}">News</a>
+        </div>
+    </nav>
+
+    <div class="search-box">  
+        <form action="{% url 'st_homepage' %}" method="post"> 
+        {% csrf_token %}   
+            <div id="div-margin">   
+            {{ form.entered_stock }}             
+            <button class="btn-search"><i class="fas fa-search"></i></button>
+            </div>
+            <button class="btn-search"><i class="fas fa-search"></i></button>
+            {{ form.entered_company }}
+        </form>
+    </div>    
+    
+    <footer>
+        <p>
+            Created with <i class="fa fa-heart"></i> by
+            <a target="_blank" href="https://codepen.io/ahmadbassamemran/">Ahmad Emran</a>
+            Follow me: 
+            <a target="_blank" href="https://www.instagram.com/ahmadbassamemran/"><i class="fab fa-instagram"></i></a>
+            <a target="_blank" href="https://www.linkedin.com/in/ahmademarn/"><i class="fab fa-linkedin"></i></a>
+            <a target="_blank" href="https://codepen.io/ahmadbassamemran/"><i class="fab fa-codepen"></i></a> 
+            <a target="_blank" href="https://dev.to/ahmadbassamemran"><i class="fab fa-dev"></i></a> 
+            <a target="_blank" href="https://twitter.com/ahmadbassamemra"><i class="fab fa-twitter-square"></i></a> 
+        </p>
+    </footer>
+    
+    <div class="youtubeBtn">
+        <a target="_blank" href="https://www.youtube.com/AhmadEmran?sub_confirmation=1">
+            <span>Watch on YouTube</span>
+            <i class="fab fa-youtube"></i>
+        </a>
+    </div> 
+
+
+    <script src="{% static 'home.js' %}"></script> 
+</body>
+</html> 
