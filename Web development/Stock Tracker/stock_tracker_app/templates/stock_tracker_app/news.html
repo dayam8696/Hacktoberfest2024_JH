@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock News</title>
+    <link rel="stylesheet" href="{% static 'news.css' %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="{% url 'st_homepage' %}">Home</a>
+        </div>
+        <div class="nav-right">
+            <a href="{% url 'st_allstocks' %}">My Stocks</a>
+            <a href="{% url 'st_stocknews' %}">News</a>
+        </div>
+    </nav>
+
+    <div class="button-div">
+        <form method="post" action="{% url 'st_stocknews' %}">
+        {% csrf_token %}
+        <button> Reload </button>
+        </form> 
+    </div> 
+
+    <div>
+        <h3>Welcome {{ name }}!!</h3><br>
+        <h2>Today's Headlines for your stocks are:</h2>
+        {% if data_collected %}
+            {% for news in news_data %}
+                <div>
+                    <h3>{{ news.company_name }}</h3>
+                    {% if news.its_holiday %}
+                        <h3> On holiday :)</h3>
+                    {% else %}
+                        <p>Source: {{ news.source }}</p>
+                        <h4>{{ news.news1.title }}</h4>
+                        <p>{{ news.news1.content }}</p>
+                        <p>Read more: <a href="{{ news.news1.url }}">Click Me</a></p>
+            
+                        <h4>{{ news.news2.title }}</h4>
+                        <p>{{ news.news2.content }}</p>
+                        <p>Read more: <a href="{{ news.news2.url }}">Click Me</a></p>
+                    {% endif %}
+                </div>
+            <hr>
+            {% endfor %}
+        {% else %}
+            <p> Reload to Get news</p>
+        {% endif %}
+    </div>
+</body>
+</html>

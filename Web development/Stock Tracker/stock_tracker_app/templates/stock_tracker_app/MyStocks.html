@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Mys Stocks</title>
+  <link rel="stylesheet" href="{% static 'MyStocks.css' %}">
+
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+        <a href="{% url 'st_homepage' %}">Home</a>
+    </div>
+    <div class="nav-right">
+        <a href="{% url 'st_allstocks' %}">My Stocks</a>
+        <a href="{% url 'st_stocknews' %}">News</a>
+    </div>
+</nav>
+
+<h1>Your Stocks</h1>
+
+<form action="{% url 'st_allstocks' %}" method="post">
+    {% csrf_token %}
+  <ul>
+    {% for stock in stocks %}
+      <li>
+        {{ stock.company_name }}
+        <div class="input-container">
+          <label for="lower_limit_{{ forloop.counter }}">Lower Limit:</label>
+          <input type="number" id="lower_limit_{{ forloop.counter }}" name="lower_limit" min="-100" max="0" value="{{ stock.lower_limit }}" step="1">
+          
+          <label for="upper_limit_{{ forloop.counter }}">Upper Limit:</label>
+          <input type="number" id="upper_limit_{{ forloop.counter }}" name="upper_limit" min="0" max="100" value="{{ stock.upper_limit }}" step="1">
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+  <button type="submit" style="--c:#E95A49"> Save </button>
+</form>
+
+
+
+  <!--<script  src="{% static 'script.js' %}"></script>-->
+
+</body>
+</html>
