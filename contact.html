@@ -1,0 +1,123 @@
+<html lang="en">
+<head>                                                                           
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT US</title>
+
+</head>
+
+<header>
+      <div class="lg">
+        <h2>   <img src="logo.jpg" alt="Cultural Coders" class="image" width="50px" height="50px"> </h2>
+      </div>
+      <nav class="flex">
+       <ul class="flex">
+        <li>
+         <a href="">BACK</a>
+        </li>
+       </ul>
+      </nav>
+</header>
+
+<style>
+*{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+       }
+body {
+    font-family: Arial, sans-serif;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background-size: cover;
+}
+.container{
+       width:100%;
+       height:100vh;
+       background-image: linear-gradient(rgba(222, 14, 237, 0.4),rgba(15, 200, 241, 0.4));
+       }
+      
+h1 {
+    text-align: center;
+    color: white;
+}
+
+header{
+       display: flex;
+       align-items: center;
+       justify-content: space-around;
+       }   
+ 
+nav ul li{
+       list-style: none;
+       display: inline-block;
+       }
+
+nav ul li a{
+       text=decoration: none;
+       color: #fff;
+       font-size: 18px;
+       padding: 0 15px;
+       }
+      
+form {
+    max-width: 400px;
+    margin: 50 auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: white;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 5px solid #faf9f9;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+header,footer{ 
+    background-color:#fff;
+    color: #1e05fa;
+    width: 100%;
+}
+    
+footer{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-size: 15px;
+    padding: 20px 0;
+}
+
+
+</style>
+
+<footer> <h3>&copy; All Rights Reserved </h3> </footer>
+
+<body>
+    <form>
+        <h1>CONTACT US</h1>
+        <label for="name">NAME:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="Email">EMAIL</label>
+        <input type="email" id="email" name="name"><br><br>
+        <label for="MESSAGE">MESSAGE:</label>
+        <textarea id="message" name="message" rows="5"></textarea><br><br>
+        <input type="submit" value="Submit">
+        
+        </form>
+</body>
+</html>
