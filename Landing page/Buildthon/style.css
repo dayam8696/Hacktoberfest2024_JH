@@ -1,0 +1,154 @@
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #f72585;
+    --bg-gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background: var(--bg-gradient);
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/api/placeholder/1920/1080') center/cover;
+    opacity: 0.1;
+}
+
+header .container {
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 3.5em;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Features Section */
+.feature-card {
+    padding: 30px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Testimonials Section */
+#testimonials {
+    background-color: #f8f9fa;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin: 20px 0;
+}
+
+.testimonial-card img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* CTA Section */
+#cta {
+    background: var(--bg-gradient);
+    padding: 80px 0;
+}
+
+.btn-custom {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 30px;
+    border: none;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-custom:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    padding: 30px 0;
+}
+
+/* Animations */
+.animate-fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header {
+        padding: 80px 0;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    .feature-card {
+        margin-bottom: 20px;
+    }
+
+    .btn-custom {
+        padding: 12px 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .testimonial-card {
+        margin: 10px 0;
+    }
+}
